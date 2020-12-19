@@ -17,4 +17,5 @@ public class Champion {
 
     private String name;
     private String type;
+    private String deleteThis;
 }
