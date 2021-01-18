@@ -1,0 +1,7 @@
+steps:
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t', 'gcr.io/devops-kevinberg/github.com/kevinberg92/devopsexercises:$SHORT_SHA', '.']
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'gcr.io/devops-kevinberg/github.com/kevinberg92/devopsexercises:$SHORT_SHA']
+  - name: 'gcr.io/cloud-builders/gcloud'
+    args: ['beta', 'run', 'deploy', 'devops-kevinberg', '--region=us-central1', '--platform=managed', '--image=gcr.io/devops-kevinberg/github.com/kevinberg92/devopsexercises:$SHORT_SHA']
