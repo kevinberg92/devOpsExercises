@@ -1,6 +1,6 @@
 provider "google" {
-  credentials = "${file("service-account.json")}"
-  project     = "devopscube-demo"
+  credentials = "${file("google-key.json")}"
+  project     = "devops-kevinberg"
   region      = "us-central1"
   zone        = "us-central1-c"
 }
